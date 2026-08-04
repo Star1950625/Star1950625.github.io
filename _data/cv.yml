@@ -1,0 +1,47 @@
+cv:
+  name: Shunxiang Liao
+  label: Undergraduate Student
+  email: # add your email
+  location: Shenzhen, Guangdong, China
+  image: ""
+  summary: Undergraduate student at Harbin Institute of Technology, Shenzhen. Passionate about computer science and research.
+
+  social_networks:
+    - network: GitHub
+      username: Star1950625
+
+  address:
+    city: Shenzhen
+    region: Guangdong
+    countryCode: CN
+
+  sections:
+    Education:
+      - institution: Harbin Institute of Technology, Shenzhen
+        location: Shenzhen, Guangdong, China
+        url: https://www.hitsz.edu.cn/
+        area: Computer Science (expected)
+        studyType: B.Eng.
+        start_date: 2023
+        end_date: 2027
+        score: ""
+        courses: ""
+        highlights:
+          - Add your highlights here.
+
+    # Interests:
+    #   - name: Machine Learning
+    #     icon: fa-solid fa-tag
+    #     keywords: "Deep Learning, NLP, Computer Vision"
+
+    # Languages:
+    #   - name: Chinese
+    #     summary: "Native speaker"
+    #   - name: English
+    #     summary: "Fluent"
+
+    # Skills:
+    #   - name: Programming
+    #     level: Intermediate
+    #     icon: fa-solid fa-hashtag
+    #     keywords: "Python, C/C++, LaTeX"
