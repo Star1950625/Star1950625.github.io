@@ -20,14 +20,10 @@ cv:
       - institution: Harbin Institute of Technology, Shenzhen
         location: Shenzhen, Guangdong, China
         url: https://www.hitsz.edu.cn/
-        area: Computer Science (expected)
+        area: Computer Science
         studyType: B.Eng.
         start_date: 2023
         end_date: 2027
-        score: ""
-        courses: ""
-        highlights:
-          - Add your highlights here.
 
     # Interests:
     #   - name: Machine Learning
