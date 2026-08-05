@@ -1,19 +1,15 @@
 cv:
   name: Shunxiang Liao
   label: Undergraduate Student
-  email: # add your email
   location: Shenzhen, Guangdong, China
-  image: ""
-  summary: Undergraduate student at Harbin Institute of Technology, Shenzhen. Passionate about computer science and research.
+  summary: >
+    Undergraduate student at Harbin Institute of Technology, Shenzhen.
+    Passionate about computer science and research,
+    with interests in multimodal learning and reasoning.
 
   social_networks:
     - network: GitHub
       username: Star1950625
-
-  address:
-    city: Shenzhen
-    region: Guangdong
-    countryCode: CN
 
   sections:
     Education:
@@ -25,19 +21,39 @@ cv:
         start_date: 2023
         end_date: 2027
 
-    # Interests:
-    #   - name: Machine Learning
-    #     icon: fa-solid fa-tag
-    #     keywords: "Deep Learning, NLP, Computer Vision"
+    Publications:
+      - title: >
+          Reasoning Matters: Mitigate Hallucination in Multimodal Large
+          Reasoning Models via Reasoning-Conditioned Preference Optimization
+        authors:
+          - Jiawei Kong
+          - Hao Fang
+          - Shunxiang Liao
+          - Jinyu Li
+          - Bin Chen
+          - Hao Wu
+          - Shu-Tao Xia
+          - Min Zhang
+        publisher: arXiv preprint arXiv:2605.27906
+        releaseDate: 2026-05-27
+        url: https://arxiv.org/abs/2605.27906
 
-    # Languages:
-    #   - name: Chinese
-    #     summary: "Native speaker"
-    #   - name: English
-    #     summary: "Fluent"
+    Interests:
+      - name: Multimodal Learning
+        icon: fa-solid fa-brain
+        keywords: "Vision-Language Models, Reasoning, Hallucination Mitigation"
 
-    # Skills:
-    #   - name: Programming
-    #     level: Intermediate
-    #     icon: fa-solid fa-hashtag
-    #     keywords: "Python, C/C++, LaTeX"
+      - name: Machine Learning
+        icon: fa-solid fa-robot
+        keywords: "Deep Learning, Representation Learning"
+
+    Skills:
+      - name: Programming
+        level: Intermediate
+        icon: fa-solid fa-code
+        keywords: "Python, C/C++, LaTeX"
+
+      - name: Tools
+        level: Intermediate
+        icon: fa-solid fa-wrench
+        keywords: "PyTorch, Git, Linux"
