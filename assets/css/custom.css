@@ -50,7 +50,10 @@ body > .container {
 
 /* ---- 3. Card hover lift ---- */
 .card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 .card:hover {
   transform: translateY(-4px);
@@ -104,4 +107,105 @@ code,
 pre,
 kbd {
   font-family: "JetBrains Mono", "Roboto Mono", monospace;
+}
+
+/* ---- 7. CV layout ---- */
+.cv .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cv .col-xs-10,
+.cv .col-sm-10,
+.cv .col-md-10 {
+  flex: 0 0 75%;
+  max-width: 75%;
+  padding-left: 0.5rem;
+}
+
+.cv .location {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.cv .card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.25rem;
+}
+
+.cv .mt-3 {
+  margin-top: 1rem;
+}
+
+.cv .p-3 {
+  padding: 1rem;
+}
+
+.cv-education-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-education-item {
+  padding: 0.75rem 0;
+  border: 0;
+  background: transparent;
+}
+
+.cv-education-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 1rem;
+  align-items: start;
+}
+
+.cv-education-institution {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.cv-education-degree {
+  margin: 0.25rem 0 0;
+  line-height: 1.5;
+}
+
+.cv-education-date {
+  margin-top: 0.1rem;
+  white-space: nowrap;
+}
+
+.cv-education-location {
+  margin: 0.65rem 0 0;
+  color: var(--global-text-color-light, var(--global-text-color));
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.cv-education-location .iconlocation {
+  margin-right: 0.25rem;
+}
+
+@media (max-width: 767px) {
+  
+  .cv .col-xs-10,
+  .cv .col-sm-10,
+  .cv .col-md-10 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: 575px) {
+  .cv-education-heading {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .cv-education-date {
+    justify-self: start;
+  }
 }
