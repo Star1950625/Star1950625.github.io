@@ -1,0 +1,90 @@
+{% comment %}
+  Local education renderer. The plugin's legacy Bootstrap columns let long
+  English locations collide with institution names when Bootstrap compat is
+  disabled, so this component uses a self-contained responsive grid.
+{% endcomment %}
+
+<ul class="card-text font-weight-light cv-education-list">
+  {% for entry in entries %}
+    {% capture start_date %}
+      {% if entry.start_date %}{{ entry.start_date }}{% elsif entry.startDate %}{{ entry.startDate }}{% endif %}
+    {% endcapture %}
+    {% assign start_date = start_date | strip %}
+    {% capture end_date %}
+      {% if entry.end_date %}{{ entry.end_date }}{% elsif entry.endDate %}{{ entry.endDate }}{% endif %}
+    {% endcapture %}
+    {% assign end_date = end_date | strip %}
+    {% capture point_date %}
+      {% if entry.date %}{{ entry.date }}{% elsif entry.releaseDate %}{{ entry.releaseDate }}{% endif %}
+    {% endcapture %}
+    {% assign point_date = point_date | strip %}
+
+    {% if start_date != '' %}
+      {% assign start_year = start_date | split: '-' | first %}
+      {% assign end_year = end_date | split: '-' | first | default: 'Present' %}
+      {% assign date = start_year | append: ' - ' | append: end_year %}
+    {% elsif point_date != '' %}
+      {% assign date = point_date | split: '-' | first %}
+    {% else %}
+      {% assign date = null %}
+    {% endif %}
+
+    {% capture study_type %}
+      {% if entry.studyType %}{{ entry.studyType }}{% elsif entry.degree %}{{ entry.degree }}{% endif %}
+    {% endcapture %}
+    {% assign study_type = study_type | strip %}
+
+    <li class="list-group-item cv-education-item">
+      <div class="cv-education-heading">
+        <div>
+          {% if entry.institution %}
+            <h4 class="cv-education-institution">
+              {% if entry.url %}
+                <a href="{{ entry.url }}">{{ entry.institution }}</a>
+              {% else %}
+                {{ entry.institution }}
+              {% endif %}
+            </h4>
+          {% endif %}
+
+          {% if study_type != '' or entry.area %}
+            <p class="cv-education-degree">
+              {% if study_type != '' -%}
+                <strong>{{ study_type }}</strong>
+              {%- endif %}
+              {% if study_type != '' and entry.area -%}
+                <span aria-hidden="true"> &middot; </span>
+              {%- endif %}
+              {% if entry.area -%}
+                <em>{{ entry.area }}</em>
+              {%- endif %}
+            </p>
+          {% endif %}
+        </div>
+
+        {% if date %}
+          <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle cv-education-date">{{ date }}</span>
+        {% endif %}
+      </div>
+
+      {% if entry.location %}
+        <p class="cv-education-location"><i class="fa-solid fa-location-dot iconlocation" aria-hidden="true"></i>{{ entry.location }}</p>
+      {% endif %}
+
+      {% if entry.courses or entry.highlights %}
+        <ul class="items cv-education-details">
+          {% for item in entry.courses %}
+            <li>
+              <span class="item">{{ item }}</span>
+            </li>
+          {% endfor %}
+          {% for item in entry.highlights %}
+            <li>
+              <span class="item">{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
