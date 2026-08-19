@@ -38,14 +38,14 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of your cool projects.",
+          description: "Selected machine learning and research engineering projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-repositories",
           title: "repositories",
-          description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
+          description: "Selected open-source projects and repositories on GitHub.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
@@ -60,7 +60,17 @@ ninja.data = [{
         },{id: "news-personal-website-is-now-live-built-with-al-folio-theme",
           title: '🚀 Personal website is now live! Built with al-folio theme.',
           description: "",
-          section: "News",},{
+          section: "News",},{id: "projects-grpo-baseline",
+          title: 'GRPO Baseline',
+          description: "A compact GRPO training and GSM8K evaluation baseline for mathematical reasoning.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/grpo-baseline/";
+            },},{id: "projects-itad-replication",
+          title: 'iTaD Replication',
+          description: "Adaptive contrastive decoding experiments for reducing vision-language model hallucinations.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/itad-replication/";
+            },},{
         id: 'social-github',
         title: 'GitHub',
         section: 'Socials',
