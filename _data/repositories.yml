@@ -4,6 +4,7 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
+  # Featured repositories shown on the repositories page.
   - Star1950625/grpo_baseline
   - Star1950625/iTaD_Replication
   - Star1950625/Star1950625.github.io
