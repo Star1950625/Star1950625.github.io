@@ -4,9 +4,32 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
-  # Featured repositories shown on the repositories page.
   - Star1950625/grpo_baseline
   - Star1950625/iTaD_Replication
   - Star1950625/Star1950625.github.io
   - Star1950625/oil-gas-foundation-submit
   - Star1950625/smart_car_race
+
+# Local metadata keeps repository cards available even when the external
+# GitHub stats image service is unavailable or rate-limited.
+static_repositories:
+  - name: grpo_baseline
+    url: https://github.com/Star1950625/grpo_baseline
+    description: GRPO training and GSM8K evaluation baseline for mathematical reasoning.
+    language: Python
+  - name: iTaD_Replication
+    url: https://github.com/Star1950625/iTaD_Replication
+    description: Inference-time adaptive decoding experiments for reducing vision-language model hallucinations.
+    language: Python
+  - name: Star1950625.github.io
+    url: https://github.com/Star1950625/Star1950625.github.io
+    description: Personal academic homepage and project portfolio.
+    language: HTML
+  - name: oil-gas-foundation-submit
+    url: https://github.com/Star1950625/oil-gas-foundation-submit
+    description: Oil and gas foundation submission project.
+    language: Python
+  - name: smart_car_race
+    url: https://github.com/Star1950625/smart_car_race
+    description: Smart car racing project.
+    language: C

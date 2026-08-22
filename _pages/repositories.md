@@ -7,41 +7,52 @@ nav: true
 nav_order: 4
 ---
 
-{% if site.data.repositories.github_users %}
+<style>
+  .static-repositories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0 2rem;
+  }
 
-## GitHub users
+  .static-repository-card {
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+    min-height: 160px;
+    background: var(--global-card-bg-color, transparent);
+  }
 
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for user in site.data.repositories.github_users %}
-    {% include repository/repo_user.liquid username=user %}
+  .static-repository-card h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+  }
+
+  .static-repository-card h3 a {
+    color: var(--global-theme-color);
+  }
+
+  .static-repository-card p {
+    min-height: 3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .static-repository-language {
+    color: var(--global-text-color-light);
+    font-size: 0.95rem;
+  }
+</style>
+
+<h2 id="github-repositories">GitHub Repositories</h2>
+
+<div class="static-repositories">
+  {% for repository in site.data.repositories.static_repositories %}
+    <article class="static-repository-card">
+      <h3>
+        <a href="{{ repository.url }}" rel="external nofollow noopener" target="_blank">{{ repository.name }}</a>
+      </h3>
+      <p>{{ repository.description }}</p>
+      <span class="static-repository-language">{{ repository.language }}</span>
+    </article>
   {% endfor %}
 </div>
-
----
-
-{% if site.repo_trophies.enabled %}
-{% for user in site.data.repositories.github_users %}
-{% if site.data.repositories.github_users.size > 1 %}
-
-  <h4>{{ user }}</h4>
-  {% endif %}
-  <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% include repository/repo_trophies.liquid username=user %}
-  </div>
-
----
-
-{% endfor %}
-{% endif %}
-{% endif %}
-
-{% if site.data.repositories.github_repos %}
-
-## GitHub Repositories
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for repo in site.data.repositories.github_repos %}
-    {% include repository/repo.liquid repository=repo %}
-  {% endfor %}
-</div>
-{% endif %}
